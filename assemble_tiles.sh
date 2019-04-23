@@ -139,7 +139,7 @@ while read ENTRY; do
     BLEND_HEIGHT_ARGS="\\( -size ${TILE_HEIGHT}x${OVERDRAW_WIDTH} gradient: -append -rotate 90 \\) -composite -compose multiply"
   fi
 
-  if [ "${COLUMNS}" -gt "1" ] || [ "${COLUMNS}" -gt "1" ]; then
+  if [ "${COLUMNS}" -gt "1" ] || [ "${ROWS}" -gt "1" ]; then
     BLEND_ARGS="\\( -size ${TILE_WIDTH}x${TILE_HEIGHT} xc:white ${BLEND_HEIGHT_ARGS} ${BLEND_WIDTH_ARGS} -rotate 180 \\)"
     ALPHA_ARGS="${BLEND_ARGS} ${ALPHA_COMPOSITE_ARGS} -delete 0 -compose Over -mosaic"
     RGB_ARGS="${BLEND_ARGS} ${COMPOSITE_ARGS} -delete 0 -compose Over -mosaic"
